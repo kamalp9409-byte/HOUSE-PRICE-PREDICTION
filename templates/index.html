@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="card">
+    <h2><i class="fa-solid fa-house"></i> Smart House Price Prediction</h2>
+
+    <form action="/predict" method="post">
+
+        <div class="input-group">
+            <label><i class="fa-solid fa-city"></i> Select City</label>
+            <select name="city" required>
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Pune">Pune</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label><i class="fa-solid fa-ruler-combined"></i> Area (sq ft)</label>
+            <input type="number" name="area" required>
+        </div>
+
+        <div class="input-group">
+            <label><i class="fa-solid fa-bed"></i> Bedrooms</label>
+            <input type="number" name="bedrooms" required>
+        </div>
+
+        <div class="input-group">
+            <label><i class="fa-solid fa-bath"></i> Bathrooms</label>
+            <input type="number" name="bathrooms" required>
+        </div>
+
+        <div class="input-group">
+            <label><i class="fa-solid fa-hourglass-half"></i> House Age (years)</label>
+            <input type="number" name="age" required>
+        </div>
+
+        <div class="input-group">
+            <label><i class="fa-solid fa-train-subway"></i> Metro Distance (meters)</label>
+            <input type="number" name="metro" required>
+        </div>
+
+        <div class="input-group">
+            <label><i class="fa-solid fa-square-parking"></i> Parking Available</label>
+            <select name="parking" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label><i class="fa-solid fa-star"></i> Location Rating (1–10)</label>
+            <input type="number" name="rating" min="1" max="10" required>
+        </div>
+
+        <button type="submit" class="btn">
+            <i class="fa-solid fa-chart-line"></i> Predict Price
+        </button>
+
+    </form>
+</div>
+
+</body>
+</html>
